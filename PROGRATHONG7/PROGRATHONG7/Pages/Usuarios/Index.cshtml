@@ -1,82 +1,33 @@
 ﻿@page
+@model PROGRATHONG7.Pages.Usuarios.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<style>
-    body {
-        background-color: #ffe6f0;
-        font-family: Arial, sans-serif;
-    }
+<div style="max-width:700px;margin:40px auto;background:white;padding:30px;border-radius:15px;box-shadow:0 0 15px rgba(255,105,180,0.3);">
 
-    .contenedor {
-        max-width: 700px;
-        margin: 40px auto;
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
-    }
-
-    h1 {
-        text-align: center;
-        color: #d63384;
-        margin-bottom: 30px;
-    }
-
-    input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-    }
-
-    button {
-        width: 100%;
-        background-color: #ff69b4;
-        color: white;
-        border: none;
-        padding: 12px;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-
-        button:hover {
-            background-color: #d63384;
-        }
-
-    table {
-        width: 100%;
-        margin-top: 30px;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-    }
-
-    th {
-        background-color: #ffb6c1;
-    }
-</style>
-
-<div class="contenedor">
-    <h1>👤 Usuarios</h1>
+    <h1 style="text-align:center;color:#d63384;margin-bottom:30px;">👤 Usuarios</h1>
 
     <form method="post">
-        <input name="Nombre" placeholder="Nombre completo" required />
-        <input name="Tipo" placeholder="Estudiante / Profesor" required />
-        <input name="Correo" placeholder="Correo electrónico" required />
-        <button type="submit">Agregar Usuario</button>
+        @Html.AntiForgeryToken()
+        <input asp-for="NuevoUsuario.Nombre" placeholder="Nombre completo" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+        <input asp-for="NuevoUsuario.Tipo" placeholder="Estudiante / Profesor" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+        <input asp-for="NuevoUsuario.Correo" placeholder="Correo electrónico" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+
+        <button type="submit" style="width:100%;background-color:#ff69b4;color:white;border:none;padding:12px;border-radius:8px;font-size:16px;cursor:pointer;">Agregar Usuario</button>
     </form>
 
-    <table>
-        <tr>
+    <table style="width:100%;margin-top:30px;border-collapse:collapse;">
+        <tr style="background-color:#ffb6c1;">
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Correo</th>
         </tr>
-        @* aquí luego va el foreach *@
+        @foreach (var u in Model.ListaUsuarios)
+        {
+            <tr>
+                <td>@u.Nombre</td>
+                <td>@u.Tipo</td>
+                <td>@u.Correo</td>
+            </tr>
+        }
     </table>
 </div>

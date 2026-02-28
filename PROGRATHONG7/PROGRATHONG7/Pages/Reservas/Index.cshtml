@@ -1,37 +1,36 @@
 ﻿@page
+@model IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<style>
-    body { background-color: #ffe6f0; font-family: Arial; }
-    .box {
-        max-width: 700px;
-        margin: 40px auto;
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
-    }
-    h1 { text-align: center; color: #ad1457; }
-    input, button {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-    }
-    button {
-        background: #ff69b4;
-        color: white;
-        border: none;
-    }
-</style>
-
-<div class="box">
-    <h1>📅 Reservas</h1>
+<div style="max-width:700px;margin:40px auto;background:white;padding:30px;border-radius:15px;box-shadow:0 0 15px rgba(255,105,180,0.3);">
+    <h1 style="text-align:center;color:#ad1457;margin-bottom:20px;">📅 Reservas</h1>
 
     <form method="post">
-        <input placeholder="Usuario" />
-        <input placeholder="Laboratorio" />
-        <input type="date" />
-        <input type="time" />
-        <button>Reservar</button>
+        @Html.AntiForgeryToken()
+
+        <input asp-for="Usuario" placeholder="Usuario" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+        <input asp-for="Laboratorio" placeholder="Laboratorio" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+        <input asp-for="Fecha" type="date" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+        <input asp-for="Hora" type="time" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+
+        <button type="submit" style="width:100%;background-color:#ff69b4;color:white;border:none;padding:12px;border-radius:8px;font-size:16px;cursor:pointer;">Reservar</button>
     </form>
-</div>
+
+    <table style="width:100%;margin-top:30px;border-collapse:collapse;">
+        <tr style="background-color:#ffb6c1;">
+            <th>Usuario</th>
+            <th>Laboratorio</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+        </tr>
+        @foreach (var r in Model.ListaReservasInstancia)
+        {
+            <tr>
+                <td>@r.Usuario</td>
+                <td>@r.Laboratorio</td>
+                <td>@r.Fecha</td>
+                <td>@r.Hora</td>
+            </tr>
+        }
+    </table>
+</div>>

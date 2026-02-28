@@ -1,36 +1,35 @@
 ﻿@page
+@model PROGRATHONG7.Pages.Laboratorios.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<style>
-    body { background-color: #fff0f5; font-family: Arial; }
-    .box {
-        max-width: 700px;
-        margin: 40px auto;
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
-    }
-    h1 { text-align: center; color: #c2185b; }
-    input, button {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-    }
-    button {
-        background: #ff69b4;
-        color: white;
-        border: none;
-    }
-</style>
-
-<div class="box">
-    <h1>🧪 Laboratorios</h1>
+<div style="max-width:700px;margin:40px auto;background:white;padding:30px;border-radius:15px;box-shadow:0 0 15px rgba(255,105,180,0.3);">
+    <h1 style="text-align:center;color:#c2185b;margin-bottom:20px;">🧪 Laboratorios</h1>
 
     <form method="post">
-        <input placeholder="Nombre del laboratorio" />
-        <input placeholder="Capacidad" />
-        <input placeholder="Responsable" />
-        <button>Agregar Laboratorio</button>
+        @Html.AntiForgeryToken()
+
+        <input asp-for="Nombre" placeholder="Nombre del laboratorio" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+        <input asp-for="Capacidad" type="number" placeholder="Capacidad" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+        <input asp-for="Responsable" placeholder="Responsable" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;" />
+
+        <button type="submit" style="width:100%;background-color:#ff69b4;color:white;border:none;padding:12px;border-radius:8px;font-size:16px;cursor:pointer;">Agregar Laboratorio</button>
     </form>
+
+    <table style="width:100%;margin-top:30px;border-collapse:collapse;">
+        <tr style="background-color:#ffb6c1;">
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Capacidad</th>
+            <th>Responsable</th>
+        </tr>
+        @foreach (var lab in Model.LaboratoriosInstancia)
+        {
+            <tr>
+                <td>@lab.Id</td>
+                <td>@lab.Nombre</td>
+                <td>@lab.Capacidad</td>
+                <td>@lab.Responsable</td>
+            </tr>
+        }
+    </table>
 </div>

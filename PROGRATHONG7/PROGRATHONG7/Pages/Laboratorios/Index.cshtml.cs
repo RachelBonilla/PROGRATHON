@@ -1,28 +1,47 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PROGRATHONG7.Models;
-using PROGRATHONG7.Repositorio;
 using System.Collections.Generic;
 
 namespace PROGRATHONG7.Pages.Laboratorios
 {
     public class IndexModel : PageModel
     {
-        public List<Laboratorio> Laboratorios => InMemoryRepository.Laboratorios;
-
         [BindProperty] public string Nombre { get; set; }
         [BindProperty] public int Capacidad { get; set; }
         [BindProperty] public string Responsable { get; set; }
 
-        public void OnPost()
+        public static List<Laboratorio> ListaLaboratorios { get; set; } = new List<Laboratorio>();
+
+        public List<Laboratorio> LaboratoriosInstancia { get; set; }
+
+        public void OnGet()
         {
-            InMemoryRepository.Laboratorios.Add(new Laboratorio
+            LaboratoriosInstancia = ListaLaboratorios;
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!string.IsNullOrWhiteSpace(Nombre) &&
+                Capacidad > 0 &&
+                !string.IsNullOrWhiteSpace(Responsable))
             {
-                Id = InMemoryRepository.Laboratorios.Count + 1,
-                Nombre = Nombre,
-                Capacidad = Capacidad,
-                Responsable = Responsable
-            });
+                ListaLaboratorios.Add(new Laboratorio
+                {
+                    Id = ListaLaboratorios.Count + 1,
+                    Nombre = Nombre,
+                    Capacidad = Capacidad,
+                    Responsable = Responsable
+                });
+            }
+
+            Nombre = "";
+            Capacidad = 0;
+            Responsable = "";
+
+            LaboratoriosInstancia = ListaLaboratorios;
+
+            return Page();
         }
     }
 }

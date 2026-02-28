@@ -1,30 +1,41 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PROGRATHONG7.Models;
-using PROGRATHONG7.Repositorio;
-using System.Collections.Generic;
 
 namespace PROGRATHONG7.Pages.Usuarios
 {
     public class IndexModel : PageModel
     {
-        public List<Usuario> Usuarios { get; set; } = new();
+        [BindProperty]
+        public Usuario NuevoUsuario { get; set; } = new Usuario();
+
+        public static List<Usuario> Usuarios { get; set; } = new List<Usuario>();
+
+        public List<Usuario> ListaUsuarios { get; set; }
 
         public void OnGet()
         {
-            Usuarios = InMemoryRepository.Usuarios;
+            ListaUsuarios = Usuarios;
         }
 
-        public IActionResult OnPost(string Nombre, string Tipo, string Correo)
+        public IActionResult OnPost()
         {
-            InMemoryRepository.Usuarios.Add(new Usuario
+            if (!string.IsNullOrWhiteSpace(NuevoUsuario.Nombre) &&
+                !string.IsNullOrWhiteSpace(NuevoUsuario.Tipo) &&
+                !string.IsNullOrWhiteSpace(NuevoUsuario.Correo))
             {
-                Nombre = Nombre,
-                Tipo = Tipo,
-                Correo = Correo
-            });
+                Usuarios.Add(new Usuario
+                {
+                    Nombre = NuevoUsuario.Nombre,
+                    Tipo = NuevoUsuario.Tipo,
+                    Correo = NuevoUsuario.Correo
+                });
+            }
 
-            return RedirectToPage();
+            NuevoUsuario = new Usuario();
+            ListaUsuarios = Usuarios;
+
+            return Page();
         }
     }
 }
