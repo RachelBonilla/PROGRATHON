@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PROGRATHONG7")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e38755c631881610299cd9c213d997df44f8407")]
 [assembly: System.Reflection.AssemblyProductAttribute("PROGRATHONG7")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PROGRATHONG7")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
