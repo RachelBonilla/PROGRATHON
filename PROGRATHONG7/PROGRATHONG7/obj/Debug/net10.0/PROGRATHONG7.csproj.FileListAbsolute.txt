@@ -1,0 +1,9 @@
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.AssemblyInfoInputs.cache
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.AssemblyInfo.cs
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.csproj.CoreCompileInputs.cache
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.RazorAssemblyInfo.cache
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.RazorAssemblyInfo.cs
+C:\Users\rboni\OneDrive\Documentos\GitHub\PROGRATHON\PROGRATHONG7\PROGRATHONG7\obj\Debug\net10.0\PROGRATHONG7.sourcelink.json
