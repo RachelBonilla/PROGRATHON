@@ -1,8 +1,131 @@
 ﻿@page
-<h1>Prograthon - Sistema de Reservas</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Prograthon - Sistema de Reservas</title>
+</head>
+<body style="margin:0; font-family: Arial, Helvetica, sans-serif; background-color:#fff0f6;">
 
-<ul>
-    <li><a href="/Usuarios">Usuarios</a></li>
-    <li><a href="/Laboratorios">Laboratorios</a></li>
-    <li><a href="/Reservas">Reservas</a></li>
-</ul>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div style="
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        ">
+
+        <!-- TÍTULO -->
+        <h1 style="
+            color:#d63384;
+            font-size:48px;
+            margin-bottom:5px;
+            ">
+            Prograthon
+        </h1>
+
+        <h3 style="
+            color:#ad1457;
+            margin-bottom:40px;
+            font-weight:normal;
+            ">
+            Sistema de Reservas
+        </h3>
+
+        <!-- TARJETAS -->
+        <div style="
+            display:flex;
+            gap:30px;
+            ">
+
+            <!-- USUARIOS -->
+            <div style="
+                background:white;
+                padding:25px;
+                width:220px;
+                border-radius:15px;
+                text-align:center;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);
+                ">
+                <h2 style="color:#d63384;">Usuarios</h2>
+                <a href="/Usuarios"
+                       style="
+                    display:inline-block;
+                    margin-top:15px;
+                    padding:10px 20px;
+                    background-color:#ff69b4;
+                    color:white;
+                    text-decoration:none;
+                    border-radius:20px;
+                    font-weight:bold;
+                    ">
+                    Entrar
+                </a>
+            </div>
+
+            <!-- LABORATORIOS -->
+            <div style="
+                background:white;
+                padding:25px;
+                width:220px;
+                border-radius:15px;
+                text-align:center;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);
+                ">
+                <h2 style="color:#d63384;">Laboratorios</h2>
+                <a href="/Laboratorios"
+                       style="
+                    display:inline-block;
+                    margin-top:15px;
+                    padding:10px 20px;
+                    background-color:#ff69b4;
+                    color:white;
+                    text-decoration:none;
+                    border-radius:20px;
+                    font-weight:bold;
+                    ">
+                    Entrar
+                </a>
+            </div>
+
+            <!-- RESERVAS -->
+            <div style="
+                background:white;
+                padding:25px;
+                width:220px;
+                border-radius:15px;
+                text-align:center;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);
+                ">
+                <h2 style="color:#d63384;">Reservas</h2>
+                <a href="/Reservas"
+                       style="
+                    display:inline-block;
+                    margin-top:15px;
+                    padding:10px 20px;
+                    background-color:#ff69b4;
+                    color:white;
+                    text-decoration:none;
+                    border-radius:20px;
+                    font-weight:bold;
+                    ">
+                    Entrar
+                </a>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <p style="
+            margin-top:40px;
+            color:#ad1457;
+            font-size:14px;
+            ">
+            PROGRATHON G7 💖
+        </p>
+
+    </div>
+
+</body>
+</html>

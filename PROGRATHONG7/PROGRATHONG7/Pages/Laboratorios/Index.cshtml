@@ -1,8 +1,36 @@
 ﻿@page
-@model reservas.Pages.Laboratorios.IndexModel
 
-<h2>Gestión de Laboratorios</h2>
+<style>
+    body { background-color: #fff0f5; font-family: Arial; }
+    .box {
+        max-width: 700px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+    }
+    h1 { text-align: center; color: #c2185b; }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+    button {
+        background: #ff69b4;
+        color: white;
+        border: none;
+    }
+</style>
 
-<p>Aquí se gestionan los laboratorios.</p>
+<div class="box">
+    <h1>🧪 Laboratorios</h1>
 
-<a asp-page="/Index">Volver al inicio</a>
+    <form method="post">
+        <input placeholder="Nombre del laboratorio" />
+        <input placeholder="Capacidad" />
+        <input placeholder="Responsable" />
+        <button>Agregar Laboratorio</button>
+    </form>
+</div>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Prograthon</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+            body {
+                background-color: #fff0f5;
+            }
+
+            .navbar-pink {
+                background-color: #e83e8c;
+            }
+
+            .text-pink {
+                color: #e83e8c;
+            }
+
+            .btn-pink {
+                background-color: #e83e8c;
+                color: white;
+            }
+
+            .btn-pink:hover {
+                background-color: #d63384;
+                color: white;
+            }
+
+            .pink-card {
+                border-top: 5px solid #e83e8c;
+            }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-pink navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">Prograthon</a>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Usuarios">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Laboratorios">Laboratorios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Reservas">Reservas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        @RenderBody()
+    </main>
+
+</body>
+</html>

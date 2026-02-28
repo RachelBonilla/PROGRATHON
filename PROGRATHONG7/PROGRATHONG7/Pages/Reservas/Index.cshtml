@@ -1,4 +1,37 @@
 ﻿@page
-@model PROGRATHONG7.Pages.Reservas.IndexModel
-@{
-}
+
+<style>
+    body { background-color: #ffe6f0; font-family: Arial; }
+    .box {
+        max-width: 700px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+    }
+    h1 { text-align: center; color: #ad1457; }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+    button {
+        background: #ff69b4;
+        color: white;
+        border: none;
+    }
+</style>
+
+<div class="box">
+    <h1>📅 Reservas</h1>
+
+    <form method="post">
+        <input placeholder="Usuario" />
+        <input placeholder="Laboratorio" />
+        <input type="date" />
+        <input type="time" />
+        <button>Reservar</button>
+    </form>
+</div>
